@@ -10,7 +10,7 @@ load_dotenv()
 
 cohere_api_key = os.getenv("COHERE_API_KEY")
 mongo_uri = os.getenv("MONGO_URI")
-mongo_uri = os.getenv("FRONTED_URL")
+frontendUrl = os.getenv("FRONTED_URL")
 co = cohere.Client(cohere_api_key)
 
 
@@ -40,7 +40,7 @@ def generate_code_snippet(task):
 
 #  Flask app init
 app = Flask(__name__)
-CORS(app, origins=["https://aicode.sangammundhe.site"])
+CORS(app, origins=["http://localhost:5173", frontendUrl])
 
 
 #  route
