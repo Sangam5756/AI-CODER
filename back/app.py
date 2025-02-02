@@ -87,5 +87,8 @@ def get_all_tasks():
 
 
 # # Run the app
+# if __name__ == "__main__":
+#     app.run(debug=True)
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Use host="0.0.0.0" to make sure the app is publicly available
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

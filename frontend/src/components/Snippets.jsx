@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Loading from "./Loading";
+import { backendUrl } from "../utils/constants";
 
 const CodeSnippetDisplay = () => {
   const [taskData, setTaskData] = useState([]); // To store existing tasks from the API
@@ -13,7 +14,7 @@ const CodeSnippetDisplay = () => {
     // Fetch existing tasks from the Flask API on initial load
     const fetchTaskData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/get-tasks"); // Replace with your Flask server URL
+        const response = await fetch(backendUrl+"/get-tasks"); // Replace with your Flask server URL
         const data = await response.json();
         setTaskData(data); // Set the fetched data to the state
         console.log(data);
@@ -40,7 +41,7 @@ const CodeSnippetDisplay = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/generate_code", {
+      const response = await fetch(backendUrl+"/generate_code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
