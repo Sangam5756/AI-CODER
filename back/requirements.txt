@@ -1,0 +1,6 @@
+Flask
+flask-cors
+cohere
+pymongo
+dnspython
+python-dotenv
