@@ -87,11 +87,5 @@ def get_all_tasks():
 
 
 # # Run the app
-# if __name__ == "__main__":
-#     app.run(debug=True)
-def handler(event, context):
-    from werkzeug.wsgi import DispatcherMiddleware
-    from werkzeug.serving import run_simple
-
-    # Vercel handler
-    return app(event, context)  # Required for Vercel
+if __name__ == "__main__":
+    app.run(debug=True)
