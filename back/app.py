@@ -39,7 +39,7 @@ def generate_code_snippet(task):
 
 #  Flask app init
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173","https://ai-coder123.vercel.app"])
+CORS(app, origins=["https://ai-coder123.vercel.app"])
 
 
 #  route
